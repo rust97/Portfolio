@@ -7,7 +7,6 @@ const withMDX = require("@next/mdx")({
 });
 
 const baseConfig = {
-  target: "serverless",
   pageExtensions: ["js", "jsx", "md", "mdx"],
   webpack(config) {
     config.resolve.modules = [path.resolve("./src"), ...config.resolve.modules];
