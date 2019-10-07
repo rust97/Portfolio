@@ -12,6 +12,17 @@ body {
   letter-spacing: 1px;
 }
 
+.main-cont {
+  background-image: radial-gradient(
+    circle,
+    #e2e8f0,
+    #eaedf4,
+    #f2f3f7,
+    #f9f9fb,
+    #ffffff
+  );
+}
+
 main {
   min-width: fit-content;
   min-height: calc(100vh - 150px);

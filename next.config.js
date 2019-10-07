@@ -1,6 +1,6 @@
-const path = require("path");
 const withCSS = require("@zeit/next-css");
 
+<<<<<<< HEAD
 const withMDX = require("@next/mdx")({
   // parse mdx files
   extension: /\.mdx?$/
@@ -15,3 +15,6 @@ const baseConfig = {
 };
 
 module.exports = [withCSS, withMDX].reduce((a, b) => b(a), baseConfig);
+=======
+module.exports = withCSS({});
+>>>>>>> +contentful
