@@ -15,13 +15,13 @@ export default function Footer() {
           <p>Social</p>
           <ul>
             <li>
-              <a href="#">Vkontakte</a>
+              <a href="https://vk.com/tulaganov_r">Vkontakte</a>
             </li>
             <li>
-              <a href="#">Instagram</a>
+              <a href="https://www.instagram.com/tulaganov.r/">Instagram</a>
             </li>
             <li>
-              <a href="#">Telegram</a>
+              <a href="https://t.me/tulaganov_r">Telegram</a>
             </li>
           </ul>
         </div>
