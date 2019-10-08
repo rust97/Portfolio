@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <footer className="w-full flex justify-around items-center">
-      <p>Copyright 2019 Tulaganov R.A.</p>
-      <div className="flex">
+      <p className="copyright">Copyright 2019 Tulaganov R.A.</p>
+      <div className="flex footer__contacts">
         <div className="footer__list-wrap mr-16">
           <p>Contant</p>
           <ul>

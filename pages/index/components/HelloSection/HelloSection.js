@@ -1,7 +1,7 @@
 export default function HelloSection() {
   return (
     <div className="flex  w-full justify-center items-center hello__wrap">
-      <div className="flex  w-full justify-center items-end pb-16">
+      <div className=" flex  w-full justify-center items-end pb-16">
         <span
           className="main__photo"
           style={{ background: `url('/static/images/ph.png')` }}

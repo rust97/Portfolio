@@ -1,66 +1,106 @@
 import Layout from "../../components/Layout";
 import HelloSection from "../index/components/HelloSection";
-import AboutSection from "../index/components/AboutSection";
-import AffairsSection from "./components/AffairsSection/AffairsSection";
-import ContactSection from "./components/ContactSection/ContactSection";
-import Spinner from "../../components/Spinner";
 import "../../styles/index.css";
-import { useEffect, useState } from "react";
 
-const client = require("contentful").createClient({
-  space: "sc9ok02q0vxo",
-  accessToken: "wWLPUyf9LFpFrck9Ke7ZBcZj5g2OvicRPB7ET3VyROQ"
-});
+function Index({ about, whatIDo, contact }) {
+  // const abTitle = about.title;
+  // const intro = about.intro.content[0].content[0].value;
+  // const info = about.info.content[0].content[0].value;
+  // const afTitle = whatIDo.title;
+  // const dev = whatIDo.development;
+  // const devText = whatIDo.developmentText.content[0].content[0].value;
+  // const ContactTitle = contact.title;
+  // const email = contact.email.content[0].content;
+  // const otherContacts = contact.otherContacts.content[0].content;
 
-export default () => {
-  async function fetchEntriesForContentType(contentType) {
-    const entries = await client.getEntries({
-      content_type: contentType
-    });
-    if (entries.items) return entries.items;
-    console.log(`Error getting Entries for ${contentType.name}.`);
-  }
+  return (
+    <Layout>
+      <HelloSection />
+      <section className="flex flex-col justify-center items-center about__container">
+        <article className="about__me flex items-start w-11/12">
+          <div className="about__me-title w-3/12">
+            <h1 className="uppercase">{about.title}</h1>
+          </div>
+          <div className="about__me-text w-9/12">
+            <p className="mb-5">{about.intro.content[0].content[0].value}</p>
+            <p className="mb-5">{about.info.content[0].content[0].value}</p>
+          </div>
+        </article>
+      </section>
+      <span className="main__dash w-full block" />
+      <section className="flex flex-col justify-center items-center affairs__container">
+        <article className="affairs__me flex items-start w-11/12">
+          <div className="affairs__me-title w-3/12">
+            <h1 className="uppercase">{whatIDo.title}</h1>
+          </div>
+          <div className="affairs__me-text w-9/12">
+            <h3>{whatIDo.development}</h3>
+            <p className="mb-5">
+              {whatIDo.developmentText.content[0].content[0].value}
+            </p>
+          </div>
+        </article>
+      </section>
+      <span className="main__dash w-full block" />
+      <section className="flex flex-col justify-center items-center about__container">
+        <article className="about__me flex items-start w-11/12">
+          <div className="about__me-title w-3/12">
+            <h1 className="uppercase">{contact.title}</h1>
+          </div>
+          <div className="about__me-text w-9/12">
+            <p className="mb-5">
+              {contact.email.content[0].content[0].value}
+              <a href={contact.email.content[0].content[1].data.uri}>
+                {contact.email.content[0].content[1].content[0].value}
+              </a>
+              .
+            </p>
+            <p className="mb-5">
+              {contact.otherContacts.content[0].content[0].value}{" "}
+              <a href={contact.otherContacts.content[0].content[1].data.uri}>
+                {contact.otherContacts.content[0].content[1].content[0].value}
+              </a>{" "}
+              {contact.otherContacts.content[0].content[2].value}{" "}
+              <a href={contact.otherContacts.content[0].content[3].data.uri}>
+                {contact.otherContacts.content[0].content[3].content[0].value}
+              </a>
+              .
+            </p>
+          </div>
+        </article>
+      </section>
+    </Layout>
+  );
+}
 
-  const [data, setData] = useState([]);
+Index.getInitialProps = async ({ req }) => {
+  const about = await import("../../static/about.json");
+  const whatIDo = await import("../../static/whatIDo.json");
+  const contact = await import("../../static/contact.json");
 
-  useEffect(() => {
-    async function getdata() {
-      const about = await fetchEntriesForContentType("about");
-      const whatIDo = await fetchEntriesForContentType("whatIDo");
-      const contact = await fetchEntriesForContentType("contact");
-      setData([...about, ...whatIDo, ...contact]);
-    }
-    getdata();
-  }, []);
-
-  if (data.length === 0) {
-    return (
-      <Layout>
-        <Spinner />
-      </Layout>
-    );
-  } else {
-    return (
-      <Layout>
-        <HelloSection />
-        <AboutSection
-          title={data[0].fields.title}
-          intro={data[0].fields.intro.content[0].content[0].value}
-          info={data[0].fields.info.content[0].content[0].value}
-        />
-        <span className="main__dash w-full block" />
-        <AffairsSection
-          title={data[1].fields.title}
-          dev={data[1].fields.development}
-          devText={data[1].fields.developmentText.content[0].content[0].value}
-        />
-        <span className="main__dash w-full block" />
-        <ContactSection
-          title={data[2].fields.title}
-          email={data[2].fields.email.content[0].content}
-          otherContacts={data[2].fields.otherContacts.content[0].content}
-        />
-      </Layout>
-    );
-  }
+  return { about, whatIDo, contact };
 };
+
+export default Index;
+
+// <Layout>
+//       <HelloSection />
+//       <AboutSection
+
+//         title={about.title}
+//         intro={about.intro.content[0].content[0].value}
+//         info={about.info.content[0].content[0].value}
+//       />
+//       <span className="main__dash w-full block" />
+//       <AffairsSection
+//         title={whatIDo.title}
+//         dev={whatIDo.development}
+//         devText={whatIDo.developmentText.content[0].content[0].value}
+//       />
+//       <span className="main__dash w-full block" />
+//       <ContactSection
+//         title={contact.title}
+//         email={contact.email.content[0].content}
+//         otherContacts={contact.otherContacts.content[0].content}
+//       />
+//     </Layout>

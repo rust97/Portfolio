@@ -32,6 +32,98 @@ nav p {
   font-size: 18px;
   letter-spacing: 3px;
 }
+@media (max-width: 700px) {
+  header {
+    justify-content: center !important;
+    align-items: center;
+  }
+  nav p {
+    font-size: 15px !important;
+    padding: 5px !important;
+    letter-spacing: 3px;
+  }
+  .copyright {
+    display: none !important;
+  }
+  .main__photo {
+    display: none !important;
+  }
+  .hello__wrap {
+    align-items: flex-end !important;
+    height: 300px !important;
+  }
+  .about__me {
+    flex-direction: column;
+  }
+  .about__me-title {
+    margin: 15px 0 25px 0 !important;
+  }
+  .about__me-text {
+    margin: auto !important;
+    text-align: justify;
+  }
+  .affairs__me {
+    flex-direction: column;
+  }
+  .affairs__me-title {
+    margin: 0 0 25px 0 !important;
+  }
+  .affairs__me-text {
+    margin: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  nav p {
+    font-size: 10px !important;
+    padding: 5px !important;
+    letter-spacing: 3px;
+  }
+  .footer__contacts {
+    flex-direction: column;
+  }
+  .footer__list-wrap {
+    margin: 0 !important;
+  }
+  .hello__wrap h1 {
+    font-size: 1rem !important;
+  }
+  .hello__wrap p {
+    font-size: 13px !important;
+  }
+  .about__me-title {
+    font-size: 16px !important;
+  }
+  .about__me-text {
+    font-size: 13px !important;
+  }
+  .affairs__me-title {
+    width: 40%;
+    font-size: 16px !important;
+  }
+  .affairs__me-text {
+    font-size: 13px !important;
+  }
+  .affairs__me-text h3 {
+    font-size: 20px !important;
+  }
+  .portfolio__quote {
+    font-size: 15px !important;
+    text-align: center;
+  }
+  .project__wrap {
+    max-width: 250px !important;
+    max-height: 250px !important;
+    height: 250px !important;
+    width: 250px !important;
+  }
+  .project__wrap img {
+    max-width: 250px !important;
+    max-height: 250px !important;
+    height: 250px !important;
+    width: 250px !important;
+  }
+}
 
 .main__photo {
   width: 250px;
@@ -99,4 +191,26 @@ footer {
 
 .footer__list-wrap a {
   transition: all 0.3s;
+}
+
+.about__me-title,
+.affairs__me-title {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.about__me-text,
+.affairs__me-text {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.affairs__me-text h3 {
+  font-size: 30px;
+  text-align: left;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 25px !important;
+  text-transform: uppercase;
 }
