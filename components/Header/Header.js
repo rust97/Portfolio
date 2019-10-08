@@ -10,7 +10,7 @@ export default function Header() {
             <p className=" mx-2 p-4 ">About</p>
           </a>
         </Link>
-        <Link href="/portfolio">
+        <Link href="/works">
           <a>
             <p className=" mx-2 p-4 ">Portfolio</p>
           </a>
