@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Router from "next/router";
 export default function Header() {
   return (
     <header className="w-full h-20 flex justify-end">
@@ -10,7 +11,9 @@ export default function Header() {
         </Link>
         <Link href="/portfolio">
           <a>
-            <p className=" mx-2 p-4 ">Portfolio</p>
+            <p onClick={() => Router.push("/portfolio")} className=" mx-2 p-4 ">
+              Portfolio
+            </p>
           </a>
         </Link>
         <Link href="/books-notes">
