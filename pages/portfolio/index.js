@@ -1,9 +1,9 @@
 import "./portfolio.css";
 import Layout from "../../components/Layout";
+import Link from "next/link";
 import "../../styles/index.css";
 
 function Porfolio({ portfolio }) {
-  console.log(portfolio);
   return (
     <Layout>
       <p className="portfolio__quote">

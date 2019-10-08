@@ -1,5 +1,6 @@
 import Header from "../Header";
 import Footer from "../Footer";
+import Link from "next/link";
 import "../../styles/index.css";
 import "../../styles/fonts.css";
 
