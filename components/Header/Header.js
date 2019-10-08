@@ -9,11 +9,11 @@ export default function Header() {
             <p className=" mx-2 p-4 ">About</p>
           </a>
         </Link>
-        <Link href="/portfolio" onClick={() => Router.push("/portfolio")}>
-          <a>
-            <p className=" mx-2 p-4 ">Portfolio</p>
-          </a>
-        </Link>
+
+        <p onClick={() => Router.push("/portfolio")} className=" mx-2 p-4 ">
+          Portfolio
+        </p>
+
         <Link href="/books-notes">
           <a>
             <p className=" mx-2 p-4 ">Books notes</p>
