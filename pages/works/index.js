@@ -1,7 +1,6 @@
 import Layout from "../../components/Layout";
 import Link from "next/link";
-import "../../styles/index.css";
-import "./portfolio.css";
+// import "../../styles/index.css";
 
 function Porfolio({ portfolio }) {
   return (
