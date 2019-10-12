@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "export": "npm run build && next export",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "postinstall": "npm run getcontent",
     "getcontent": "babel-node helpers/getcontent.js install"
   },
