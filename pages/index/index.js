@@ -1,20 +1,15 @@
 import Layout from "../../components/Layout";
 import HelloSection from "../index/components/HelloSection";
 import "../../styles/index.css";
+import Head from "next/head";
 
 function Index({ about, whatIDo, contact }) {
-  // const abTitle = about.title;
-  // const intro = about.intro.content[0].content[0].value;
-  // const info = about.info.content[0].content[0].value;
-  // const afTitle = whatIDo.title;
-  // const dev = whatIDo.development;
-  // const devText = whatIDo.developmentText.content[0].content[0].value;
-  // const ContactTitle = contact.title;
-  // const email = contact.email.content[0].content;
-  // const otherContacts = contact.otherContacts.content[0].content;
-
   return (
     <Layout>
+      <Head>
+        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <title>Frontend Developer</title>
+      </Head>
       <HelloSection />
       <section className="flex flex-col justify-center items-center about__container">
         <article className="about__me flex items-start w-11/12">

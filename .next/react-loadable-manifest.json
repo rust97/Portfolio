@@ -1,0 +1,42 @@
+{
+  "../../static/about.json": [
+    {
+      "id": "./static/about.json",
+      "name": "./static/about.json",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
+  ],
+  "../../static/contact.json": [
+    {
+      "id": "./static/contact.json",
+      "name": "./static/contact.json",
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
+    }
+  ],
+  "../../static/portfolio.json": [
+    {
+      "id": "./static/portfolio.json",
+      "name": "./static/portfolio.json",
+      "file": "static/chunks/4.js",
+      "publicPath": "static/chunks/4.js"
+    }
+  ],
+  "../../static/whatIDo.json": [
+    {
+      "id": "./static/whatIDo.json",
+      "name": "./static/whatIDo.json",
+      "file": "static/chunks/3.js",
+      "publicPath": "static/chunks/3.js"
+    }
+  ],
+  "./dev/noop": [
+    {
+      "id": "./node_modules/next/dist/client/dev/noop.js",
+      "name": "./node_modules/next/dist/client/dev/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ]
+}

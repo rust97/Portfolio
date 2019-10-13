@@ -1,10 +1,13 @@
 import Layout from "../../components/Layout";
-import Link from "next/link";
-// import "../../styles/index.css";
+import Head from "next/head";
 
 function Porfolio({ portfolio }) {
   return (
     <Layout>
+      <Head>
+        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <title>Frontend Developer</title>
+      </Head>
       <p className="portfolio__quote">
         If you find a bug, just remember that it’s not a bug. It’s an
         undocumented feature!
